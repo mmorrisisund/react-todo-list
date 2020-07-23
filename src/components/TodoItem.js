@@ -2,6 +2,19 @@ import React, { Component } from 'react'
 
 export default class TodoItem extends Component {
   render () {
-    return <h1>hello from todo item</h1>
+    const { title, handleDelete, handleEdit } = this.props
+    return (
+      <li className='list-group-item text-capitalize d-flex justify-content-between'>
+        <h6>{title}</h6>
+        <div className='todo-icon'>
+          <span className='mr-2 text-success' onClick={handleEdit}>
+            <i className='fas fa-pen' />
+          </span>
+          <span className='mr-2 text-danger' onClick={handleDelete}>
+            <i className='fas fa-trash' />
+          </span>
+        </div>
+      </li>
+    )
   }
 }
